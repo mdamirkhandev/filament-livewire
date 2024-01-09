@@ -44,18 +44,18 @@ class ArticleResource extends Resource
             ]);
     }
 
-    public static function relationships(): array
-    {
-        return [
-            BelongsTo::make('category')->relationship('category'),
-        ];
-    }
+    // public static function relationships(): array
+    // {
+    //     return [
+    //         BelongsTo::make('category')->relationship('category'),
+    //     ];
+    // }
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('title')->searchable(),
-                TextColumn::make('category_id'),
+                TextColumn::make('title')->searchable()->sortable(),
+                TextColumn::make('category.name')->sortable(),
                 TextColumn::make('author'),
             ])
             ->filters([
