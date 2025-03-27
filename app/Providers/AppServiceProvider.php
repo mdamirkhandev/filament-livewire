@@ -6,6 +6,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Service;
+use App\Models\Page;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,5 +28,13 @@ class AppServiceProvider extends ServiceProvider
             $services = Service::orderBy('title', 'ASC')->get();
             $view->with('services', $services);
         });
+        $aboutUs = Page::where('slug', 'about-us')->first();
+        $privacyPolicy = Page::where('slug', 'privacy-policy')->first();
+        $tandc = Page::where('slug', 'terms-and-conditions')->first();
+        View::share([
+            'aboutUs' => $aboutUs,
+            'privacyPolicy' => $privacyPolicy,
+            'tandc' => $tandc
+        ]);
     }
 }

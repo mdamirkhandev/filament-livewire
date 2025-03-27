@@ -48,7 +48,7 @@
                             <a wire:navigate class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a wire:navigate class="nav-link" href="{{ route('static-page',$page->slug) }}">About Us</a>
+                            <a wire:navigate class="nav-link" href="{{ route('static-page',$aboutUs->slug) }}">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a wire:navigate class="nav-link" href="{{ route('services') }}">Services</a>
@@ -93,7 +93,7 @@
                     <div class="footer-widget">
                         <h5 class="mb-4 text-primary font-secondary">Quick Links</h5>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><a wire:navigate href="{{ route('static-page', $page->slug) }}">About Us</a></li>
+                            <li class="mb-2"><a wire:navigate href="{{ route('static-page', $aboutUs->slug) }}">About Us</a></li>
                             <li class="mb-2"><a wire:navigate href="{{ route('contact') }}">Contact Us</a></li>
                             <li class="mb-2"><a wire:navigate href="{{ route('blog') }}">Blog</a></li>
                             <li class="mb-2"><a wire:navigate href="{{ route('teames') }}">Team</a></li>
@@ -105,11 +105,11 @@
                         <h5 class="mb-4 text-primary font-secondary">Other Links</h5>
                         <ul class="list-unstyled">
                             <li class="list-inline-item me-4">
-                                <a wire:navigate class="text-black" href="{{ route('static-page', 2) }}">Privacy
+                                <a wire:navigate class="text-black" href="{{ route('static-page',$privacyPolicy->slug) }}">Privacy
                                     Policy</a>
                             </li>
                             <li class="list-inline-item me-4">
-                                <a wire:navigate class="text-black" href="{{ route('static-page', 3) }}">Terms &amp;
+                                <a wire:navigate class="text-black" href="{{ route('static-page', $tandc->slug) }}">Terms &amp;
                                     Conditions</a>
                             </li>
                         </ul>
