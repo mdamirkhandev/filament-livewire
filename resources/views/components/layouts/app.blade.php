@@ -48,7 +48,7 @@
                             <a wire:navigate class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a wire:navigate class="nav-link" href="{{ route('static-page', 1) }}">About Us</a>
+                            <a wire:navigate class="nav-link" href="{{ route('static-page',$page->slug) }}">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a wire:navigate class="nav-link" href="{{ route('services') }}">Services</a>
@@ -93,9 +93,8 @@
                     <div class="footer-widget">
                         <h5 class="mb-4 text-primary font-secondary">Quick Links</h5>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><a wire:navigate href="{{ route('static-page', 1) }}">About Us</a></li>
-                            <li class="mb-2"><a wire:navigate href="{{ route('contact') }}">Contact Us</a>
-                            </li>
+                            <li class="mb-2"><a wire:navigate href="{{ route('static-page', $page->slug) }}">About Us</a></li>
+                            <li class="mb-2"><a wire:navigate href="{{ route('contact') }}">Contact Us</a></li>
                             <li class="mb-2"><a wire:navigate href="{{ route('blog') }}">Blog</a></li>
                             <li class="mb-2"><a wire:navigate href="{{ route('teames') }}">Team</a></li>
                         </ul>

@@ -19,5 +19,5 @@ Route::get('/teames', Teames::class)->name('teames');
 Route::get('/blog', Articles::class)->name('blog');
 Route::get('/blog/{id}', BlogDetail::class)->name('blog-details');
 Route::get('/faqs', Faqs::class)->name('faqs');
-Route::get('/page/{id}', StaticPage::class)->name('static-page');
+Route::get('/{slug}', StaticPage::class)->name('static-page');
 Route::get('/contact', ContactPage::class)->name('contact');

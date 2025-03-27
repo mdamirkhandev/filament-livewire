@@ -15,4 +15,12 @@ class Page extends Model
         'content',
         'status'
     ];
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($page) {
+            $page->slug = Str::slug($page->title); // Generate slug from title
+        });
+    }
 }

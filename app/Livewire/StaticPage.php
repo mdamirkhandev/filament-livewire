@@ -8,19 +8,17 @@ use Livewire\Component;
 
 class StaticPage extends Component
 {
-    public $pageId = null;
-
-    public function mount($id)
+    public $page;
+    public function mount($slug)
     {
-        $this->pageId = $id;
+        $this->page = Page::where('slug', $slug)->firstOrFail();
     }
 
     public function render()
     {
-        $page = Page::findOrFail($this->pageId);
         $teames = Team::all();
         return view('livewire.static-page', [
-            'page' => $page,
+            'page' => $this->page,
             'teames' => $teames
         ]);
     }
